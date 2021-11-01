@@ -1,14 +1,28 @@
 //exercise email
 
-const list = ['emailOne', 'emailTwo' , 'emailThree'];
+const list = ['misia@libero.it', 
+              'alessio@libero.it', 
+               'nina@libero.it'];
 
-const email = parseInt(prompt(`Inserisci la tu email`));
-console.log(`inserimento`);
+const email = prompt(`Inserisci la tu email`).trim().toLowerCase();
+console.log('inserimento');
 
-list[1] = 'emailOne';
-console.log(`list-1`);
 
-document.getElementById(`result`).innerHTML = 'La tua mail è emailOne';
+let isFound = false;
+
+for (let i = 0; i <= list.length; i++){
+
+    if(list[i] === email){
+        isFound = true;
+    }
+}
+
+if (isFound){
+console.log(`puoi entrare`);
+}else{
+    console.log(`NON puoi entrare`);
+}
+
 
 
 //exercise dadi
@@ -16,30 +30,25 @@ document.getElementById(`result`).innerHTML = 'La tua mail è emailOne';
 
 //genera numero random
 
+//random giocatore
+const rand1 = Math.floor(Math.random() * 6) + 1;
+console.log('rand1');
 
+//random computer
+const rand2 = Math.floor(Math.random() * 6) + 1;
+console.log('rand2');
 
-function casuale() {
-    num_pc = Math.floor(Math.random() * 6) + 1;
-    document.getElementById("rand").innerHTML ="Your number is " + num_pc;
-    console.log(`result`);
+if(rand1 < rand2) {
+    console.log('vince il computer');
+}else if(rand1 > rand2) {
+    console.log('vince il giocatore');
+}else(rand1 === rand2){
+    console.log('pareggio');
 }
 
-function casuale() {
-    num_per = Math.floor(Math.random() * 6) + 1;
-    document.getElementById("rand").innerHTML ="Your number is " + num_per;
-    console.log(`result`);
-}
 
-const rand1 = 'num_pc';
-const rand2 = 'num_per';
 
-if (rand1 < rand2){
-    console.log(`vince il giocatore`);
-}
 
-else if( rand2 < rand1){
-    console.log(`vince il pc`);
-}
 
 
 
