@@ -1,51 +1,53 @@
-//exercise email
+/**
+ * EMAIL
+ */
 
-const list = ['misia@libero.it', 
-              'alessio@libero.it', 
-               'nina@libero.it'];
+const mail = ['misia@libero.it','ale@libero.it','nutria@libero.it','glon@libero.it','birillo@libero.it'];
+console.log(mail);
+const email = document.querySelector('.email');
 
-const email = prompt(`Inserisci la tu email`).trim().toLowerCase();
-console.log('inserimento');
+const userMail = prompt('Inserisci la tua mail').trim().toLowerCase();
 
 
-let isFound = false;
 
-for (let i = 0; i <= list.length; i++){
+    for(let i = 0; i < mail.length; i++){
 
-    if(list[i] === email){
-        isFound = true;
+        if(mail[i] === userMail) { 
+            check = true;
+            email.innerHTML += `La tua mail è ${userMail}`;
+            break;
+        }
+        else{
+            email.innerHTML += `La mail inserita: ${userMail}  NON è corretta`;
+            check = false;
+            break;
+
+        }
     }
-}
-
-if (isFound){
-console.log(`puoi entrare`);
-}else{
-    console.log(`NON puoi entrare`);
-}
+    console.log(check);
 
 
+/**
+ * DADI
+ */
 
-//exercise dadi
+ const dadiPc = Math.floor(Math.random()* 6)+ 1;
+ console.log('Dadi PC:',dadiPc);
+ const dadiPlayer = Math.floor(Math.random()* 6)+ 1;
+ console.log('Dadi PLAYER:',dadiPlayer);
 
+ const result = document.querySelector('.dadi');
 
-//genera numero random
+ if(dadiPlayer > dadiPc) {
+     result.innerHTML += `Il vincitore sei tu con punteggio ${dadiPlayer}`;  
+ }
+ else if(dadiPlayer < dadiPc) {
+     result.innerHTML += `Il vincitore è il PC con punteggio ${dadiPc}`;  
 
-//random giocatore
-const rand1 = Math.floor(Math.random() * 6) + 1;
-console.log('rand1');
-
-//random computer
-const rand2 = Math.floor(Math.random() * 6) + 1;
-console.log('rand2');
-
-if(rand1 < rand2) {
-    console.log('vince il computer');
-}else if(rand1 > rand2) {
-    console.log('vince il giocatore');
-}else(rand1 === rand2){
-    console.log('pareggio');
-}
-
+ }
+ else{
+     result.innerHTML += `Pareggio PC: ${dadiPc}, TU: ${dadiPlayer}`;  
+ }
 
 
 
